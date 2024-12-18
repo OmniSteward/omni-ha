@@ -1,8 +1,13 @@
+
+![OmniSteward 全能管家](https://raw.githubusercontent.com/OmniSteward/OmniSteward/refs/heads/main/assets/logo.png)
+
 # Omni-HA
 
-全能管家(Omni-Steward) 的Home Assistant工具包，通过自然语言与Home Assistant进行交互，这是一个子Agent形式的工具
+这是[全能管家(Omni-Steward)](https://github.com/OmniSteward/OmniSteward)的Home Assistant工具，通过自然语言控制Home Assistant中的智能家居设备，这是一个子Agent形式的工具。
 
 注：由于现在米家官方支持Home Assistant，因此本工具也可通过HA来控制米家设备，参见 [XiaoMi/ha_xiaomi_home](https://github.com/XiaoMi/ha_xiaomi_home/tree/main)。
+
+![screenshot](./assets/screenshot.png)
 
 ## 工具概览
 
