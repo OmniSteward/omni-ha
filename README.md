@@ -14,13 +14,13 @@
 - 工具描述: 允许Omni-Steward通过自然语言与Home Assistant进行交互，控制智能家居设备
 - 工具ID: `omni_ha.HomeAssistant`
 - 工具名: `home_assistant`
-- 工具参数: （在Omni-Steward Config中配置）
+- 工具参数: （在Omni-Steward Config中配置, 参见[配置](#配置)）
     - `openai_api_key`: OpenAI API密钥
     - `openai_api_base`: OpenAI API基础URL
     - `model`: 要使用的模型名称，因为这是一个子Agent，所以也需要使用LLM来处理用户的自然语言描述
-    - `ha_url`: Home Assistant的URL, 如 `http://192.168.1.107:8123`
-    - `ha_token`: Home Assistant的API令牌，如何获取详见[附录](#如何获取HomeAssistant的API令牌)
-    - `ha_available_only`: True 可选，是否只显示可用设备, 默认只显示可用设备
+    - `homeassistant.ha_url`: Home Assistant的URL, 如 `http://192.168.1.107:8123`
+    - `homeassistant.ha_token`: Home Assistant的API令牌，如何获取详见[附录](#如何获取HomeAssistant的API令牌)
+    - `homeassistant.ha_available_only`: True 可选，是否只显示可用设备, 默认只显示可用设备
 
 ## 安装
 前置条件：
@@ -47,6 +47,22 @@ tool_names.append('omni_ha.HomeAssistant')
 ```python
 from omni_ha import HomeAssistant # 导入工具
 tool_names.append('home_assistant') # 添加到工具列表
+```
+
+## 配置
+
+在Config中添加`homeassistant`的配置项
+
+```python
+homeassistant = Config(
+    ha_url = 'http://192.168.1.107:8123',
+    ha_token = '',
+    ha_available_only = True,
+    # 以下是可选的，如果为空，则使用Omni-Steward的openai_api_key, openai_api_base, model
+    openai_api_key = None,
+    openai_api_base = None,
+    model = None,
+)
 ```
 
 ## 附录
